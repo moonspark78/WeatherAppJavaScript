@@ -18,14 +18,14 @@ body{
 }
 
 .not-found img{
-    width: 200px;
+    width: 230px;
     height: 250px;
 }
 
 .container{
     position: relative;
     width: 400px;
-    height: 105px;
+    height: 605px;
     background: #fff;
     padding: 28px 32px;
     overflow: hidden;
@@ -53,4 +53,36 @@ body{
     cursor: pointer;
     width: 50px;
     height: 50px;
+    color: #06283D;
+    background: #dff6ff;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.4s ease;
+}
+
+.search-box button:hover{
+    color: #fff;
+    background: #06283D;
+}
+
+.search-box i{
+    color: #06283D;
+    padding-right: 8px;
+    font-size: 28px;
+}
+
+.weather-box{
+    text-align: center;
+}
+
+.weather-box img{
+    width: 60%;
+    margin-top: 30px;
+}
+
+.weather-box .temperature{
+    position: relative;
+    color: #06283D;
+    font-size: 4rem;
+
 }
