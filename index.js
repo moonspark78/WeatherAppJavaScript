@@ -22,6 +22,53 @@ search.addEventListener('click', () =>{
                 error404.classList.add("fadeIn")
                 return;
             }
+
+            error404.style.display = "none";
+            error404.classList.remove("fadeIn");
+
+            const image = document.querySelector(".weather-box img");
+            const temperature = document.querySelector(".weather-box .temperature");
+            const description = document.querySelector(".weather-box .description");
+            const humidity = document.querySelector(".weather-box .humidity span");
+            const wind = document.querySelector(".weather-box .wind span");
+
+            switch (json.weather[0].main){
+                case "Clear":
+                    images.src = "images/clear.png";
+                    break;
+
+                case "Rain":
+                    images.src = "images/rain.png";
+                    break;
+
+                case "Snow":
+                    images.src = "images/snow.png";
+                    break;
+
+                case "Clouds":
+                    images.src = "images/clouds.png";
+                    break;
+
+                case "Haze":
+                    images.src = "images/haze.png";
+                    break;
+                
+                default:
+                    images.src = ""
+            }
+
+            temperature.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+            description.innerHTML = `${json.weather[0].description}`;
+            humidity.innerHTML = `${json.main.humidity}%`;
+            wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
+
+            weatherBox.style.display="";
+            weatherDetails.style.display="";
+            weatherBox.classList.add("fadeIn");
+            weatherDetails.classList.add("fadeIn");
+            container.style.height = "590px";
+
+
         })
 
 })
